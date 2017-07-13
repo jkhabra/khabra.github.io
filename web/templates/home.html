@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block container %}
+
+<div class='wrapper'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <div class='big-image'>
+    <div class='greeting'>
+      <span class='line'></span>
+      <span class='hi'>Hi I'am</span>
+      <span class='line'></span>
+    </div>
+    <div class='name' id='nam'>Jatinder Khabra</div>
+  </div>
+  <div class='who'>
+    <div class='info'>
+      <span class='line line2'></span>
+      <span class='who2'>WHO AM I?</span>
+      <span class='line line2'></span>
+    </div>
+    <div class='info-content'>
+      <span class='br'>I'm a Python Developer </span>
+      <br>
+      <span class='br'>I'm a Front End Software Engineer</span>
+      <br>
+      <span class='br'> I Build Websites And Mobile Apps</span>
+    </div>
+  </div>
+  <div class='education'>
+    <div class='edu1'>
+      <h2 class='edu2'>I'm a developer</h2>
+      <h3 class='edu3'>I'm a software developer from Punjab India who loves to write software</h3>
+      <span class='dvider'></span>
+      <div class='about-text'>
+        <img class='profile' src='/static/images/5.jpg'>
+        <p class='edu4'>I'm a web developer with a passion for bulding apps and sofware. I'm currently a third year student, and pursuing a degree in computer science. I aspire toward a career that will allow me to channel my creativity through crafting beautiful software and engaging experiences.
+          <span class='black'></span>
+          <p class='edu5'>When I'm not on the computer, I enjoy playing video games, hiking, and petting dogs.
+          </p>
+      </div>
+    </div>
+  </div>
+  <div class='skill'>
+    <div class='skill-header'>
+      <span class='line line2'></span>
+      <span class='l'>Skills</span>
+      <span class='line line2'></span>
+    </div>
+    <div class='skill1'>
+      <h2 class='tool-heading'>
+        <span class='sprite tools'>
+          <img class='icon-img' src='static/images/s2.png'>
+        </span>
+        <span>DEVELOPMENT</span>
+      </h2>
+      <div class='skill2'>
+        <ui>
+          <li class='skill-item'>Python</li>
+          <li class='skill-item'>HTML5</li>
+          <li class='skill-item'>CSS3</li>
+          <li class='skill-item'>JavaScript</li>
+          <li class='skill-item'>SQL</li>
+          <li class='skill-item'>Nginx</li>
+        </ui>
+      </div>
+    </div>
+    <div class='tool-wrapper'>
+      <h2 class="tool-heading">
+        <span class="sprite tools"><img class='icon-img' src='static/images/tool.png'></span>
+        <span>TOOLS</span>
+      </h2>
+      <ui>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> Git</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> Command Line</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> SQLAlchemy</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> Bootstrap</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> Flask</li>
+      </ui>
+    </div>
+    <div class='idea-wrapper'>
+      <h2 class="idea-heading">
+        <span class="sprite tools"><img class='icon-img' src='static/images/idea2.png'></span>
+        <span>KNOWLEDGE</span>
+      </h2>
+      <ui>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> CSS Detangling</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> ECMAScript 6</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> Usability</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> SEO</li>
+        <li class='tool-item'><img class='item-svg' src='static/images/t.png'> TDD</li>
+      </ui>
+    </div>
+  </div>
+  <div class='help'>
+    <div class='help-txt'>
+      <span class='line'></span>
+      <span class='txt'> I can help</span>
+      <span class='line'></span>
+    </div>
+    <h3 class='help-txt2'> I’m currently available for freelance work.</h3>
+    <p class='help-txt3'>
+      If you have a project that you want to get started, think you need <br>
+      my help with something or just fancy saying hey, then get in touch.
+    </p>
+    <a class="send message-btn"  href="mailto:jkhabra09@gmail.com" target="_blank" title="email">SEND MESSAGE</a>
+  </div>
+</div>
+
+<script>
+ $(document).ready(function() {
+
+   $(window).scroll(function () {
+     console.log($(window).scrollTop())
+     if ($(window).scrollTop() > 80) {
+       $('#nav').addClass('stuck');
+     }
+     if ($(window).scrollTop() < 81) {
+       $('#nav').removeClass('stuck');
+     }
+   });
+ });
+</script>
+{% endblock %}
