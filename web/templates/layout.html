@@ -1,13 +1,12 @@
 <html>
   <head>
-    <title>Home page</title>
+    <title>Jatinder Khabra</title>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
   <body>
-    <nav class='menu'>
+    <a href="#menu" id="toggle"><span></span></a>
+    <nav id='menu'>
       <ul class='nav-bar' id='nav'>
         <!-- <li style="float:left">
              <a class="nav-links" href="/"></a>
@@ -31,5 +30,45 @@
     <footer class='footer'>
       &copy;Jatinder Khabra 2017
     </footer>
+
+    <script>
+     var theToggle = document.getElementById('toggle');
+     function hasClass(elem, className) {
+	     return new RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+     }
+
+     function addClass(elem, className) {
+       if (!hasClass(elem, className)) {
+    	   elem.className += ' ' + className;
+       }
+     }
+
+     function removeClass(elem, className) {
+	     var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, ' ') + ' ';
+	     if (hasClass(elem, className)) {
+         while (newClass.indexOf(' ' + className + ' ') >= 0 ) {
+           newClass = newClass.replace(' ' + className + ' ', ' ');
+         }
+         elem.className = newClass.replace(/^\s+|\s+$/g, '');
+       }
+     }
+
+     function toggleClass(elem, className) {
+	     var newClass = ' ' + elem.className.replace( /[\t\r\n]/g, " " ) + ' ';
+       if (hasClass(elem, className)) {
+         while (newClass.indexOf(" " + className + " ") >= 0 ) {
+           newClass = newClass.replace( " " + className + " " , " " );
+         }
+         elem.className = newClass.replace(/^\s+|\s+$/g, '');
+       } else {
+         elem.className += ' ' + className;
+       }
+     }
+
+     theToggle.onclick = function() {
+       toggleClass(this, 'on');
+       return false;
+     }
+    </script>
   </body>
 </html>

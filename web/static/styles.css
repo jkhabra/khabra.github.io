@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+#toggle{
+  display:none;
+}
+
 .nav-bar {
   padding-top: 0.5em;
   position: fixed;
@@ -42,6 +46,7 @@
   width: 100%;
   top: 0;
   background: rgba(51, 51, 51, 0.53);
+  padding: 10px;
 }
 
 .nav-links:hover{
@@ -53,7 +58,8 @@
 }
 
 .container{
-  font-family: 'gotham rounded',arial,sans-serif;
+  font-family: 'gotham rounded',arial,sans
+-serif;
 }
 
 .wrapper {
@@ -649,13 +655,13 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
 
     .education {
-      height: 117vw;
+      height: 126vw;
     }
 
     .profile {
       width: 35vw;
       margin: 0 10vw 20 9em;
-      height: 31vw;
+      height: 38vw;
       float: none;
       /* border-radius: 50%; */
     }
@@ -709,13 +715,130 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 
     }
 
-  }
+      #toggle {
+      display: block;
+      position: fixed;
+      top: 25px;
+      right: 40px;
+      height: 27px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100;
+      /* display: none; */
+      transition: opacity .25s ease;
+    }
+    #toggle span:after, #toggle span:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -9px;
+    }
+    #toggle span:after{
+      top: 9px;
+    }
+    #toggle span {
+      position: relative;
+      display: block;
+    }
+    #toggle span, #toggle span:after, #toggle span:before {
+      width: 100%;
+      height: 5px;
+      /background-color: #888;
+      background-color: #c5c3c3;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+      border-radius: 2px;
+    }
+    /* on activation */
+    #toggle.on span {
+      background-color: transparent;
+    }
 
+    #toggle.on span:before {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #toggle.on span:after {
+      transform: rotate(-45deg) translate(7px, -8px);
+    }
+
+    #toggle.on + #menu {
+      opacity: 1;
+      visibility: visible;
+    }
+    /* menu appearance*/
+    #menu {
+      position: fixed;
+      color: #999;
+      width: 102px;
+      height: 145px;
+      top: 42px;
+      right: 5px;
+      padding: 5px 10 0px 30px;
+      margin: auto;
+      /* font-size: 6vw; */
+      text-align: center;
+      border-radius: 5px;
+      background: rgba(41, 36, 36, 0.27);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s;
+    }
+    /*#menu:after {
+    position: absolute;
+    top: -15px;
+    left: 95px;
+    content: "";
+    display: block;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid white;
+    }*/
+
+    .nav-bar, .nav-items, .nav-links {
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+      float: none;
+      position: static;
+    }
+    .nav-links{
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+      float: none;
+      position: static;
+      height: 40px;
+      font-size: 3.5vw;
+      line-height: 3;
+    }
+
+    .nav-links.active {
+      padding-bottom: 0px;
+      border-bottom: 1px solid #fff;
+      width: 7.5vw;
+    }
+
+    .nav-links:hover{
+   color: #fff;
+   /background: green;
+   padding-bottom: 0px;
+   border-bottom: 1.5px solid #fff;
+   width: 7.5vw
+    }
+
+    .stuck{
+      position: static;
+      background: transparent;
+      padding: 0px;
+    }
+  }
 
   /* styles for mobiles*/
 
-  @media screen and (min-width: 100px)
-  and (max-width: 481px)
+  @media screen and (max-width: 481px)
    {
     .big-image {
       height: 180vw;
@@ -756,7 +879,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
 
     .education {
-      height: 228vw;
+      height: 240vw;
     }
 
     .edu1 {
@@ -796,8 +919,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
     }
 
     .skill {
-      min-height: 275.5vw;
-      max-height: 300vw;
+      height: 330vw;
       grid-template-columns: 400fr;
       grid-template-rows: 99px 298px 261px 30px;
       grid-row-gap: 20vw;
@@ -892,4 +1014,124 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
       padding: 7vw 0px 5vw 0;
       font-size: 2.8vw;
     }
+
+    #toggle {
+      display: block;
+      position: fixed;
+      top: 25px;
+      right: 35px;
+      height: 27px;
+      width: 30px;
+      cursor: pointer;
+      z-index: 100;
+      /* display: none; */
+      transition: opacity .25s ease;
+    }
+    #toggle span:after, #toggle span:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -9px;
+    }
+    #toggle span:after{
+      top: 9px;
+    }
+    #toggle span {
+      position: relative;
+      display: block;
+    }
+    #toggle span, #toggle span:after, #toggle span:before {
+      width: 100%;
+      height: 5px;
+      /background-color: #888;
+      background-color: #c5c3c3;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+      border-radius: 2px;
+    }
+    /* on activation */
+    #toggle.on span {
+      background-color: transparent;
+    }
+
+    #toggle.on span:before {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    #toggle.on span:after {
+      transform: rotate(-45deg) translate(7px, -8px);
+    }
+
+    #toggle.on + #menu {
+      opacity: 1;
+      visibility: visible;
+    }
+    /* menu appearance*/
+    #menu {
+      position: fixed;
+      color: #999;
+      width: 102px;
+      height: 160px;
+      top: 43px;
+      right: 5px;
+      padding: 10px 20px 10px 24px;
+      margin: auto;
+      /* font-size: 6vw; */
+      text-align: center;
+      border-radius: 5px;
+      background: rgba(41, 36, 36, 0.27);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .4s;
+    }
+    /*#menu:after {
+    position: absolute;
+    top: -15px;
+    left: 95px;
+    content: "";
+    display: block;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid white;
+    }*/
+
+    .nav-bar, .nav-items, .nav-links {
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+      float: none;
+      position: static;
+    }
+    .nav-links{
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+      float: none;
+      position: static;
+      height: 40px;
+      font-size: 5vw;
+    }
+
+    .nav-links.active {
+      padding-bottom: 0px;
+      border-bottom: 1px solid #fff;
+      width: 11vw;
+    }
+
+    .nav-links:hover{
+   color: #fff;
+   /background: green;
+   padding-bottom: 0px;
+   border-bottom: 1.8px solid #fff;
+   width: 11vw
+    }
+
+    .stuck{
+      position: static;
+      background: transparent;
+      padding: 0px;
+    }
+
   }
