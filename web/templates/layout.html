@@ -15,7 +15,7 @@
           <a class="nav-links" href="/">Notes</a>
         </li>
         <li class="nav-items">
-          <a class="nav-links" href="/">Work</a>
+          <a class="nav-links" href="/work">Work</a>
         </li>
         <li class="nav-items">
           <a class="nav-links active" href="/">About</a>
@@ -68,6 +68,19 @@
      theToggle.onclick = function() {
        toggleClass(this, 'on');
        return false;
+     }
+    </script>
+
+    <script>
+     var d = document.getElementById("nav");
+     window.onscroll = function() {myFunction()};
+
+     function myFunction() {
+       if (document.body.scrollTop > 80) {
+         document.getElementById("nav").className = "stuck";
+       } else {
+         document.getElementById("nav").className = "nav-bar";
+       }
      }
     </script>
   </body>
