@@ -12,14 +12,29 @@
              <a class="nav-links" href="/"></a>
              </li> -->
         <li class="nav-items">
+          {% if request.path == '/notes' %}
+          <a class="nav-links active" href="/">Notes</a>
+          {% else %}
           <a class="nav-links" href="/">Notes</a>
+          {% endif %}
         </li>
+
         <li class="nav-items">
-          <a class="nav-links" href="/work">Work</a>
+          {% if request.path == '/projects' %}
+          <a class="nav-links active" href="/projects">Projects</a>
+          {% else %}
+          <a class="nav-links" href="/projects">Projects</a>
+          {% endif %}
         </li>
-        <li class="nav-items">
+
+        <li class="nav-items about">
+          {% if request.path =='/' %}
           <a class="nav-links active" href="/">About</a>
+          {% else %}
+          <a class="nav-links" href="/">About</a>
+          {% endif %}
         </li>
+
       </ul>
     </nav>
 
@@ -76,7 +91,7 @@
      window.onscroll = function() {myFunction()};
 
      function myFunction() {
-       if (document.body.scrollTop > 80) {
+       if (document.body.scrollTop > 150) {
          document.getElementById("nav").className = "stuck";
        } else {
          document.getElementById("nav").className = "nav-bar";
