@@ -1,7 +1,7 @@
 <html lang='en'>
   <head>
     <title>Jatinder Khabra</title>
-    <link rel=stylesheet type=text/css href="/bundle/styles.min.css">
+    <link rel=stylesheet type=text/css href="bundle/styles.min.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta name="theme-color">
   </head>
@@ -9,30 +9,23 @@
     <a href="#menu" id="toggle"><span></span></a>
     <nav id='menu'>
       <ul class='nav-bar' id='nav'>
-        <!-- <li style="float:left">
-             <a class="nav-links" href="/"></a>
-             </li> -->
         <li class="nav-items">
-          {% if active_template == '/notes' %}
-          <a class="nav-links active" href="/">Notes</a>
-          {% else %}
-          <a class="nav-links" href="/">Notes</a>
-          {% endif %}
+          <a class="nav-links" href="https://github.com/jkhabra/notes">Notes</a>
         </li>
 
         <li class="nav-items">
-          {% if request.path == '/projects' %}
-          <a class="nav-links active" href="/projects">Projects</a>
+          {% if data.active_page == 'work' %}
+          <a class="nav-links active" href="work.html">Projects</a>
           {% else %}
-          <a class="nav-links" href="/projects">Projects</a>
+          <a class="nav-links" href="work.html">Projects</a>
           {% endif %}
         </li>
 
         <li class="nav-items about">
-          {% if request.path =='/' %}
-          <a class="nav-links active" href="/">About</a>
+          {% if data.active_page == 'index' %}
+          <a class="nav-links active" href="index.html">About</a>
           {% else %}
-          <a class="nav-links" href="/">About</a>
+          <a class="nav-links" href="index.html">About</a>
           {% endif %}
         </li>
 

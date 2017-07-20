@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from css_html_js_minify import css_minify, html_minify
+from jinja2 import Environment, FileSystemLoader
 import os
 
 cwd = os.path.dirname(os.path.abspath(__file__))
@@ -9,20 +10,13 @@ bundle_dir = os.path.join(cwd, 'bundle/')
 
 
 def compile_template(template, name):
-    with open(templates_dir + '/layout.html', 'r') as f:
-        layout = f.read()
-        layout_start = layout.split("{% block container %}\n      {% endblock %}\n")
+    dir_path = os.path.dirname(os.path.abspath('./portfolio'))
+    env = Environment(loader=FileSystemLoader(os.path.join(dir_path, "__source/templates")))
+    template = env.get_template(template)
+    combine_html = template.render(data={'active_page': name})
 
-        with open(templates_dir + template, 'r') as h:
-            home = h.read()
-
-            home_start = home.split('{% block container %}')[1].split('{% endblock %}\n')[0]
-
-
-        with open(name+'.html', 'w') as index:
-            combile = index.write('{}{}{}'.format(layout_start[0], home_start, layout_start[1]))
-            print('{} template is created'.format(name+'.html'))
-
+    with open(os.path.join(cwd, name + '.html'), 'w') as f:
+        combine = f.write(combine_html)
 
 def minify_css():
     if not os.path.exists(bundle_dir):
