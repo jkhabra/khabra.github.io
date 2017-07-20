@@ -72,7 +72,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 270px 33px 50px;
-  background-image: url('/static/images/3.jpg');
+  background-image: url('./images/3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   grid-gap: 9px;
@@ -223,7 +223,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 
 .do {
   height: 55em;
-  background-image: url('/static/images/15.jpg');
+  background-image: url('./images/15.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -326,7 +326,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 
 .help {
   height: 45em;
-  background-image: url('/static/images/7.jpg');
+  background-image: url('./images/7.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -380,7 +380,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 }
 
 .skill1{
-  width: 15em;
+  width: 14em;
   font-size: 2.3vw;
   margin-left: 5em;
   grid-column: 1;
@@ -1404,7 +1404,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 /* styles for work template*/
   .my-work {
     height: 23em;
-    background-image: url('/static/images/16.jpg');
+    background-image: url('./images/16.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     /background: #1b1b1be6;
