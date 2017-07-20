@@ -3,16 +3,12 @@
     <title>Jatinder Khabra</title>
     <link rel=stylesheet type=text/css href="bundle/styles.min.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="theme-color">
+    <meta name="theme-color" content='#fff'>
   </head>
   <body>
-    <a href="#menu" id="toggle"><span></span></a>
+    <a href="#menu" id="toggle" title='Menu'><span></span></a>
     <nav id='menu'>
       <ul class='nav-bar' id='nav'>
-        <li class="nav-items">
-          <a class="nav-links" href="https://github.com/jkhabra/notes">Notes</a>
-        </li>
-
         <li class="nav-items">
           {% if data.active_page == 'work' %}
           <a class="nav-links active" href="work.html">Projects</a>

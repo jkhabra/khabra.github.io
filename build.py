@@ -65,7 +65,7 @@ def image_compression():
             image = Image.open(static_dir + 'images/' + i)
             #image_sieze = image.size
             print('compressing {} '.format(i))
-            image.save(bundle_dir + 'images/{}'.format(i),optimize=True,quality=75)
+            image.save(bundle_dir + 'images/{}'.format(i),optimize=True,quality=60)
 
 if __name__ == '__main__':
     print('Compiling index and work templates')

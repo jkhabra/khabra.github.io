@@ -74,6 +74,7 @@
   grid-template-rows: 270px 33px 50px;
   background-image: url('./images/3.jpg');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   grid-gap: 9px;
 }
@@ -207,7 +208,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
 
 .profile {
   width: 18vw;
-  height: 21vw;
+  height: 18vw;
   float: right;
   margin-top: -8em;
   margin-right: 8em;
@@ -329,6 +330,7 @@ box-shadow: 0 1px 1px rgba(0,0,0,0.3);
   background-image: url('./images/7.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .help-txt, .help-txt2{
